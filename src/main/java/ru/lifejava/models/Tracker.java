@@ -22,17 +22,7 @@ public class Tracker {
     this.items[position - 1].comment = comment;
   }
   public void delete(int del) {
-    Item[] result = new Item[10];
-    this.items[del] = null;
-
-    for (int i = 0, index = 0; i < items.length; i++) {
-      if (items[i] != null) {
-        result[index] = items[i];
-        index++;
-      }
-    }
-    position -= 1;
-    this.items = result;
+    items[del] = null;
   }
 
   public Item[] filter() {
@@ -66,11 +56,7 @@ public class Tracker {
   }
 
   public Item[] getAll() {
-    Item[] result = new Item[this.position];
-    for(int index = 0; index != this.position; index++) {
-      result[index] = this.items[index];
-    }
-    return result;
+    return items;
   }
 }
 

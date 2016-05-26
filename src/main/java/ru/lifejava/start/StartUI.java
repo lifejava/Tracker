@@ -12,7 +12,7 @@ public class StartUI {
     tracker.add(new Bug("сбой", "сбой в системе", "коментарий", 36));
     tracker.add(new Bug("темный экран", "пропажа изображения", "коментарий", 24));
     tracker.add(new Task("first task", "first desc", "коментарий", 27));
-    tracker.delete(1);
+    //tracker.delete(1);
 
 
     for (Item item : tracker.getAll()) {
