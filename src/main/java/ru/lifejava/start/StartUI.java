@@ -14,18 +14,18 @@ public class StartUI {
     tracker.add(4, new Task("first task", "first desc", "коментарий", 27));
     //tracker.delete(1);
 
-    System.out.println(tracker.findById("1")); //Поиск по id
     
     
+   
+    for (Item item : tracker.filter(23, 28)) {
+     if(item != null) {
+      System.out.printf("Имя: %s. Описание: %s.  Дата создания: %d. Id: %s \n", item.getName(), item.getDescription(), item.getCreate(), item.getId());  
+     }
+    }
     for (Item item : tracker.getAll()) {
       if(item != null) {
-	 System.out.printf("Имя: %s. Описание: %s. Коментарий: %s. Дата создания: %d. Id: %s \n", item.getName(), item.getDescription(), item.getComment(), item.getCreate(), item.getId());
+	 System.out.printf("Имя: %s. Описание: %s.  Дата создания: %d. Id: %s \n", item.getName(), item.getDescription(), item.getCreate(), item.getId());
       }
-    }/*
-    System.out.println("------------------------Сортируем по дате--------------------");
-    for (Item item : tracker.filter()) {
-      System.out.printf("Имя: %s. Описание: %s. Коментарий: %s. Дата создания: %d. Id: %s \n", item.getName(), item.getDescription(), item.getComment(), item.getCreate(), item.getId());
-    }*/
-
+    }
   }
 }

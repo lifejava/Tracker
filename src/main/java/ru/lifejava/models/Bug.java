@@ -5,7 +5,7 @@ public class Bug extends Item {
     this.name = name;
     this.description = description;
     this.comment = comment;
-    this.create = create;  
+    this.createDate = create;  
   }
   
   public String calculatePrice() {

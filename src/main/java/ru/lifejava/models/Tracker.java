@@ -39,27 +39,18 @@ public class Tracker {
     return null;
   }
   
-  /*
-  public Item[] filter() {
-    Item[] result = new Item[position];
-
-    for (int i = 0; i < result.length; i++) {
-        result[i] = this.items[i];
-    }
-
-    for (int i = result.length - 1; i > 0; i--) {
-      for ( int j = 0; j < i; j++) {
-        if (result[j].getCreate() > result[j+1].getCreate()) {
-            Item swap = result[j];
-            result[j] = result[j + 1];
-            result[j + 1] = swap;
-        }
+  public Item[] filter(long a, long b) {
+    int k = 0;
+    Item[] result = new Item[items.length];
+    for(int i = 0; items[i] != null && i < items.length; i++) {
+      if((items[i].getCreate() >= a) && (items[i].getCreate() <= b)) {
+	result[k] = items[i];
+	k++;
       }
     }
     return result;
   }
-
-}*/
+  
   public Item[] getAll() {
     return items;
   }

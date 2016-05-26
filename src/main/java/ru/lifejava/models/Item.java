@@ -5,7 +5,7 @@ public class Item {
   public String name;
   public String description;
   public String comment;
-  public long create;
+  public long createDate;
   
   public String getName() {
     return this.name;
@@ -16,7 +16,7 @@ public class Item {
   }
   
   public long getCreate() {
-    return this.create;
+    return this.createDate;
   }
   
   public String getId() {
@@ -25,9 +25,5 @@ public class Item {
   
   public void setId(String id) {
     this.id = id;
-  }
-  
-  public String getComment() {
-    return this.comment;
   }
 }
