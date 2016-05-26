@@ -2,29 +2,44 @@ package ru.lifejava.models;
 import java.util.*;
 
 public class Tracker {
-  private Item[] items = new Item[10];
-  private int position = 0;
-  private static final Random RN = new Random();
-
-  String generateId() {
-    return String.valueOf(System.currentTimeMillis() + RN.nextInt());
+  private Item[] items;
+  private static int id = 0;
+  
+  public Tracker (int size){
+    this.items = new Item[size];
+  }
+  
+  public String generateId() {
+    id++;
+    return (String.valueOf(id));
   }
 
-  public Item add(Item item) {
-    item.setId(this.generateId());
-    this.items[position++] = item;
-    return item;
+  public void add(int index, Item item) {
+    item.setId(generateId());
+    this.items[index] = item;
+  }
+  
+  public void delete(int index) {
+    this.items[index] = null;
+  }
+  
+  public void edit(String id) {
+    Item i = this.findById(id);
   }
 
-  public void edit(String name, String description, String comment) {
-    this.items[position - 1].name = name;
-    this.items[position - 1].description = description;
-    this.items[position - 1].comment = comment;
+  public Item findById(String id) {
+    for (int i = 0; i < items.length; i++) {
+      if(items[i] != null) {
+	String s = items[i].getId();
+	if(s.equals(id)) {
+	  return items[i];
+	}
+      }
+    }
+    return null;
   }
-  public void delete(int del) {
-    items[del] = null;
-  }
-
+  
+  /*
   public Item[] filter() {
     Item[] result = new Item[position];
 
@@ -44,17 +59,7 @@ public class Tracker {
     return result;
   }
 
-  protected Item findById(String id) {
-    Item result = null;
-    for (Item item : items) {
-      if(item != null && item.getId().equals(id)) {
-        result = item;
-        break;
-      }
-    }
-    return result;
-  }
-
+}*/
   public Item[] getAll() {
     return items;
   }
