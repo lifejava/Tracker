@@ -1,5 +1,6 @@
 package ru.lifejava.models;
-
+import java.text.SimpleDateFormat;
+import java.util.*;
 public class Item {
   private int id;
   public String name;
@@ -7,12 +8,23 @@ public class Item {
   public String comment;
   public long createDate;
   
+  public Item() {  
+    this.createDate = new Date().getTime();
+  }
+  
   public String getName() {
     return this.name;
+  }
+  public void setName(String str) {
+    this.name = str;
   }
   
   public String getDescription() {
     return this.description;
+  }
+  
+  public String setDescription(String str) {
+    this.description = str;
   }
   
   public long getCreate() {

@@ -14,9 +14,14 @@ public class Tracker {
     return id;
   }
 
-  public void add(int index, Item item) {
-    item.setId(generateId());
-    this.items[index] = item;
+  public void add(Item item) {
+    //this.items[items.length+1] = item;
+    for (int i = 0; i < this.items.length; i++) {
+      if (this.items[i] == null) {
+	this.items[i] = item;
+	break;
+      }
+    }
   }
   
   public void delete(int index) {
