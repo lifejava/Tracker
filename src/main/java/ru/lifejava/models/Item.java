@@ -1,7 +1,7 @@
 package ru.lifejava.models;
 
 public class Item {
-  private String id;
+  private int id;
   public String name;
   public String description;
   public String comment;
@@ -19,11 +19,11 @@ public class Item {
     return this.createDate;
   }
   
-  public String getId() {
+  public int getId() {
     return this.id;
   }
   
-  public void setId(String id) {
+  public void setId(int id) {
     this.id = id;
   }
 }

@@ -9,9 +9,9 @@ public class Tracker {
     this.items = new Item[size];
   }
   
-  public String generateId() {
+  public int generateId() {
     id++;
-    return (String.valueOf(id));
+    return id;
   }
 
   public void add(int index, Item item) {
@@ -23,15 +23,15 @@ public class Tracker {
     this.items[index] = null;
   }
   
-  public void edit(String id) {
-    Item i = this.findById(id);
+  public void edit(int id) {
+    Item idX = this.findById(id);
   }
 
-  public Item findById(String id) {
+  public Item findById(int id) { 	
     for (int i = 0; i < items.length; i++) {
       if(items[i] != null) {
-	String s = items[i].getId();
-	if(s.equals(id)) {
+	int idX = items[i].getId();
+	if(id == idX) {
 	  return items[i];
 	}
       }
