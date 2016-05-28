@@ -5,7 +5,7 @@ public class Item {
   private int id;
   public String name;
   public String description;
-  public String comment;
+  public String[] comment;
   public long createDate;
   
   public Item() {  
@@ -23,7 +23,7 @@ public class Item {
     return this.description;
   }
   
-  public String setDescription(String str) {
+  public void setDescription(String str) {
     this.description = str;
   }
   

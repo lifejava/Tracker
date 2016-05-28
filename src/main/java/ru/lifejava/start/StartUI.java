@@ -6,12 +6,12 @@ public class StartUI {
   public static void main(String[] args) {
 
     Tracker tracker = new Tracker(20);
-    tracker.add(new Task("first task", "first desc", "коментарий"));
+    tracker.add(new Task("first task", "first desc"));
     //tracker.edit("Bagbag", "fd", "измененый");
-    tracker.add(new Bug("нет сигнали", "потеря сигнала", "коментарий"));
-    tracker.add(new Bug("сбой", "сбой в системе", "коментарий"));
-    tracker.add(new Bug("темный экран", "пропажа изображения", "коментарий"));
-    tracker.add(new Task("first task", "first desc", "коментарий"));
+    tracker.add(new Bug("нет сигнали", "потеря сигнала"));
+    tracker.add(new Bug("сбой", "сбой в системе"));
+    tracker.add(new Bug("темный экран", "пропажа изображения"));
+    tracker.add(new Task("first task", "first desc"));
     //tracker.delete(1);
 
     
